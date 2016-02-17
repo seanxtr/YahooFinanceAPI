@@ -2,28 +2,17 @@ package YahooFinance;
 
 import java.io.*;
 import java.net.*;
+import java.util.*;
 
 public class Parser {
-	public static void saveUrl(String filename, String urlString)
-	        throws MalformedURLException, IOException {
-	    BufferedInputStream in = null;
-	    FileOutputStream fout = null;
-	    try {
-	        in = new BufferedInputStream(new URL(urlString).openStream());
-	        fout = new FileOutputStream(filename);
+   
+   public static void parseHistoricalPrice(String symbol, Date start, Date end){
+      
+   }
+   
+   public static Instrument parseSnapshot(String symbol, String[] tags) {
+      return null;
+   }
+   
 
-	        final byte data[] = new byte[1024];
-	        int count;
-	        while ((count = in.read(data, 0, 1024)) != -1) {
-	            fout.write(data, 0, count);
-	        }
-	    } finally {
-	        if (in != null) {
-	            in.close();
-	        }
-	        if (fout != null) {
-	            fout.close();
-	        }
-	    }
-	}
 }
